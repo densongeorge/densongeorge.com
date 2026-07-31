@@ -1,6 +1,6 @@
 # densongeorge.com
 
-The personal website and writing archive for [densongeorge.com](https://densongeorge.com), built as a static Astro site.
+The personal portfolio for [densongeorge.com](https://densongeorge.com), built as a static Astro site.
 
 ## Local development
 
@@ -20,8 +20,6 @@ The development server runs at `http://localhost:4321`. Other useful commands:
 | `npm run check`        | Run Astro and TypeScript checks     |
 | `npm run build`        | Check and build the production site |
 | `npm run preview`      | Preview the production build        |
-
-Blog posts are Markdown files in `src/content/blog/`. Their frontmatter is validated by the typed schema in `src/content.config.ts`.
 
 ## Cloudflare Pages
 
