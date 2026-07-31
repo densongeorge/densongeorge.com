@@ -65,16 +65,20 @@ const socialImageUrl = new URL("/og-image.png", site);
     <div class="site-shell">
       <header class="site-header">
         <div class="container header-inner">
-          <a class="site-name" href="/" aria-label={`${SITE_NAME}, home`}
-            >{SITE_NAME}</a
-          >
+          <a class="site-name" href="/" aria-label={`${SITE_NAME}, home`}>
+            <span class="site-mark" aria-hidden="true">DG</span>
+            <span>{SITE_NAME}</span>
+          </a>
           <nav aria-label="Profile links">
             <ul class="navigation">
               <li>
                 <a
                   href="https://www.linkedin.com/in/denson-george-925852126/"
-                  rel="me">LinkedIn</a
+                  rel="me"
                 >
+                  LinkedIn
+                  <span aria-hidden="true">↗</span>
+                </a>
               </li>
             </ul>
           </nav>
@@ -88,6 +92,10 @@ const socialImageUrl = new URL("/og-image.png", site);
       <footer class="site-footer">
         <div class="container footer-inner">
           <p>&copy; {new Date().getFullYear()} {SITE_NAME}</p>
+          <p class="footer-location">
+            <span aria-hidden="true"></span>
+            Dublin · Microsoft
+          </p>
         </div>
       </footer>
     </div>

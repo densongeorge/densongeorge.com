@@ -1,6 +1,8 @@
 ---
 import { SITE_DESCRIPTION } from "../consts";
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+const linkedInUrl = "https://www.linkedin.com/in/denson-george-925852126/";
 ---
 
 <BaseLayout
@@ -8,47 +10,145 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   description={SITE_DESCRIPTION}
 >
   <div class="container">
-    <section class="hero" aria-labelledby="intro-title">
-      <p class="eyebrow">Portfolio</p>
-      <h1 id="intro-title">Denson George</h1>
-      <p class="headline">Software engineer, now mostly babysits agents.</p>
-      <p class="hero-summary">
-        Senior Software Engineer at Microsoft, based in Dublin.
-      </p>
-      <a
-        class="text-link"
-        href="https://www.linkedin.com/in/denson-george-925852126/"
-        rel="me"
-      >
-        View LinkedIn
-        <span aria-hidden="true">→</span>
-      </a>
-    </section>
-
-    <section class="portfolio-details" aria-labelledby="current-work">
-      <div class="portfolio-heading">
-        <p class="eyebrow">Current</p>
-        <h2 id="current-work">Software and AI agents.</h2>
+    <section class="hero-stage" aria-labelledby="intro-title">
+      <div class="hero-copy">
+        <p class="eyebrow">
+          <span aria-hidden="true"></span>
+          Dublin / Microsoft
+        </p>
+        <h1 id="intro-title">Denson George</h1>
+        <p class="headline">
+          Software engineer,
+          <span>now mostly babysits agents.</span>
+        </p>
+        <p class="hero-summary">
+          Senior Software Engineer at Microsoft, based in Dublin.
+        </p>
+        <a class="button-link" href={linkedInUrl} rel="me">
+          View LinkedIn
+          <span aria-hidden="true">↗</span>
+        </a>
       </div>
 
-      <dl class="profile-facts">
-        <div>
-          <dt>Role</dt>
-          <dd>Senior Software Engineer</dd>
+      <div class="agent-panel" aria-hidden="true">
+        <div class="panel-header">
+          <span>Agent control</span>
+          <span class="live-status"><i></i> Live</span>
         </div>
-        <div>
-          <dt>Company</dt>
-          <dd>Microsoft</dd>
+
+        <div class="agent-field">
+          <div class="connector connector-one"></div>
+          <div class="connector connector-two"></div>
+          <div class="connector connector-three"></div>
+
+          <div class="human-node">
+            <span>DG</span>
+            <small>human in loop</small>
+          </div>
+
+          <div class="agent-card agent-card-one">
+            <span class="agent-id">A-01</span>
+            <strong>Planner</strong>
+            <span class="agent-state"><i></i> thinking</span>
+          </div>
+
+          <div class="agent-card agent-card-two">
+            <span class="agent-id">A-02</span>
+            <strong>Builder</strong>
+            <span class="agent-state"><i></i> running</span>
+          </div>
+
+          <div class="agent-card agent-card-three">
+            <span class="agent-id">A-03</span>
+            <strong>Reviewer</strong>
+            <span class="agent-state agent-state-warn"><i></i> needs input</span
+            >
+          </div>
         </div>
-        <div>
-          <dt>Based</dt>
-          <dd>Dublin</dd>
+
+        <div class="panel-footer">
+          <span>Illustrative system</span>
+          <span>probably fine</span>
         </div>
-        <div>
-          <dt>Focus</dt>
-          <dd>Managing AI agents</dd>
-        </div>
-      </dl>
+      </div>
+    </section>
+  </div>
+
+  <div class="signal-strip" aria-hidden="true">
+    <div>
+      <span>Software</span>
+      <i></i>
+      <span>AI agents</span>
+      <i></i>
+      <span>Dublin</span>
+      <i></i>
+      <span>Microsoft</span>
+      <i></i>
+      <span>Human in the loop</span>
+    </div>
+  </div>
+
+  <div class="container">
+    <section class="statement-section" aria-labelledby="operating-mode">
+      <div class="section-label">
+        <span>01</span>
+        <p>Current operating mode</p>
+      </div>
+      <div class="statement-copy">
+        <h2 id="operating-mode">
+          Build software.<br />
+          <em>Manage agents.</em><br />
+          Check the output.
+        </h2>
+        <p>
+          Senior Software Engineer at Microsoft, working in Dublin where
+          software engineering meets AI agents.
+        </p>
+      </div>
+    </section>
+
+    <section class="fact-section" aria-labelledby="quick-read">
+      <div class="section-label">
+        <span>02</span>
+        <p id="quick-read">The quick read</p>
+      </div>
+
+      <div class="fact-grid">
+        <article class="fact-card">
+          <span class="fact-number">01</span>
+          <p>Role</p>
+          <h2>Senior Software Engineer</h2>
+          <span class="fact-note">at Microsoft</span>
+        </article>
+
+        <article class="fact-card">
+          <span class="fact-number">02</span>
+          <p>Base</p>
+          <h2>Dublin</h2>
+          <span class="fact-note">Ireland</span>
+        </article>
+
+        <article class="fact-card fact-card-accent">
+          <span class="fact-number">03</span>
+          <p>Focus</p>
+          <h2>AI agents</h2>
+          <span class="fact-note">managed, not magic</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="contact-section" aria-labelledby="contact-title">
+      <div>
+        <p class="eyebrow">That’s the short version</p>
+        <h2 id="contact-title">Less résumé.<br />More signal.</h2>
+      </div>
+      <div class="contact-copy">
+        <p>For the verified professional version, LinkedIn has the details.</p>
+        <a class="button-link button-link-dark" href={linkedInUrl} rel="me">
+          Open LinkedIn
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
     </section>
   </div>
 </BaseLayout>
