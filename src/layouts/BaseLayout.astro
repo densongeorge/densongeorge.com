@@ -1,0 +1,136 @@
+---
+import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "../consts";
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description?: string;
+  type?: "website" | "article";
+  publishedTime?: Date;
+  noIndex?: boolean;
+}
+
+const {
+  title,
+  description = SITE_DESCRIPTION,
+  type = "website",
+  publishedTime,
+  noIndex = false,
+} = Astro.props;
+
+const site = Astro.site ?? new URL(SITE_URL);
+const canonicalUrl = new URL(Astro.url.pathname, site);
+const socialImageUrl = new URL("/og-image.png", site);
+const currentPath = Astro.url.pathname;
+
+const navigation = [
+  { label: "Home", href: "/" },
+  { label: "Writing", href: "/blog/" },
+];
+
+const isCurrent = (href: string) =>
+  href === "/" ? currentPath === href : currentPath.startsWith(href);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="color-scheme" content="light dark" />
+    <meta
+      name="theme-color"
+      content="#f5f1e7"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#151412"
+      media="(prefers-color-scheme: dark)"
+    />
+    {noIndex && <meta name="robots" content="noindex, nofollow" />}
+
+    {!noIndex && <link rel="canonical" href={canonicalUrl} />}
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title={`${SITE_NAME} — Writing`}
+      href="/rss.xml"
+    />
+
+    <meta property="og:type" content={type} />
+    <meta property="og:site_name" content={SITE_NAME} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={socialImageUrl} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Denson George — Software engineer, now managing AI agents."
+    />
+    {
+      publishedTime && (
+        <meta
+          property="article:published_time"
+          content={publishedTime.toISOString()}
+        />
+      )
+    }
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImageUrl} />
+
+    <title>{title}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Skip to content</a>
+
+    <div class="site-shell">
+      <header class="site-header">
+        <div class="container header-inner">
+          <a class="site-name" href="/" aria-label={`${SITE_NAME}, home`}
+            >{SITE_NAME}</a
+          >
+          <nav aria-label="Primary navigation">
+            <ul class="navigation">
+              {
+                navigation.map((item) => (
+                  <li>
+                    <a
+                      href={item.href}
+                      aria-current={isCurrent(item.href) ? "page" : undefined}
+                    >
+                      {item.label}
+                    </a>
+                  </li>
+                ))
+              }
+              <li>
+                <a href="https://github.com/densongeorge" rel="me">GitHub</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <main id="content">
+        <slot />
+      </main>
+
+      <footer class="site-footer">
+        <div class="container footer-inner">
+          <p>&copy; {new Date().getFullYear()} {SITE_NAME}</p>
+          <a href="/rss.xml">RSS</a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

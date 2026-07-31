@@ -1,0 +1,24 @@
+---
+import PostList from "../../components/PostList.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getPublishedPosts } from "../../lib/posts";
+
+const posts = await getPublishedPosts();
+---
+
+<BaseLayout
+  title="Writing | Denson George"
+  description="Notes by Denson George on software, AI systems, and the work around them."
+>
+  <div class="container">
+    <header class="page-header">
+      <p class="eyebrow">Writing</p>
+      <h1>Notes, kept simple.</h1>
+      <p>Short pieces published from a typed Markdown collection.</p>
+    </header>
+
+    <section class="writing-index" aria-label="Published posts">
+      <PostList posts={posts} />
+    </section>
+  </div>
+</BaseLayout>
