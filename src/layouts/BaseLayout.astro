@@ -49,7 +49,7 @@ const socialImageUrl = new URL("/og-image.png", site);
     <meta property="og:image:height" content="630" />
     <meta
       property="og:image:alt"
-      content="Denson George — Software engineer, now mostly babysits agents."
+      content="Denson George — Software engineer, now mostly babysitting agents."
     />
 
     <meta name="twitter:card" content="summary_large_image" />
@@ -66,8 +66,7 @@ const socialImageUrl = new URL("/og-image.png", site);
       <header class="site-header">
         <div class="container header-inner">
           <a class="site-name" href="/" aria-label={`${SITE_NAME}, home`}>
-            <span class="site-mark" aria-hidden="true">DG</span>
-            <span>{SITE_NAME}</span>
+            {SITE_NAME}
           </a>
           <nav aria-label="Profile links">
             <ul class="navigation">
@@ -94,10 +93,7 @@ const socialImageUrl = new URL("/og-image.png", site);
           <p>&copy; {new Date().getFullYear()} {SITE_NAME}</p>
           <div class="footer-meta">
             <a href="/colophon/">Colophon</a>
-            <p class="footer-location">
-              <span aria-hidden="true"></span>
-              Dublin · Microsoft
-            </p>
+            <p class="footer-location">Dublin · Microsoft</p>
           </div>
         </div>
       </footer>

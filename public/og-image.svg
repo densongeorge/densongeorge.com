@@ -1,70 +1,62 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
   <title id="title">Denson George</title>
-  <desc id="desc">Software engineer, now mostly babysits agents.</desc>
-  <defs>
-    <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse">
-      <path d="M64 0H0v64" fill="none" stroke="#302e29" stroke-width="1" />
-    </pattern>
-  </defs>
-  <rect width="1200" height="630" fill="#191815" />
-  <rect width="1200" height="630" fill="url(#grid)" />
-  <circle cx="1085" cy="90" r="245" fill="#db5b32" />
-  <circle cx="1085" cy="90" r="170" fill="none" stroke="#f1845f" stroke-width="2" />
+  <desc id="desc">Software engineer, now mostly babysitting agents.</desc>
+  <rect width="1200" height="630" fill="#f7f5ef" />
+  <rect x="78" y="72" width="5" height="486" fill="#8b3d2a" />
   <text
-    x="80"
-    y="88"
-    fill="#9ac9c1"
+    x="118"
+    y="112"
+    fill="#69645c"
     font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
-    font-size="24"
+    font-size="20"
     font-weight="700"
-    letter-spacing="4"
+    letter-spacing="3"
   >
-    DENSON GEORGE / DUBLIN
+    DENSON GEORGE
   </text>
   <text
-    x="78"
-    y="245"
-    fill="#f4efe5"
+    x="114"
+    y="244"
+    fill="#1d1c19"
     font-family="Georgia, 'Times New Roman', serif"
-    font-size="76"
+    font-size="74"
     font-weight="700"
-    letter-spacing="-2"
+    letter-spacing="-3"
   >
     Software engineer,
   </text>
   <text
-    x="78"
+    x="114"
     y="340"
-    fill="#f4efe5"
+    fill="#8b3d2a"
     font-family="Georgia, 'Times New Roman', serif"
-    font-size="76"
-    font-weight="700"
-    letter-spacing="-2"
-  >
-    now mostly babysits
-  </text>
-  <text
-    x="78"
-    y="435"
-    fill="#ff895f"
-    font-family="Georgia, 'Times New Roman', serif"
-    font-size="76"
+    font-size="74"
     font-style="italic"
     font-weight="700"
-    letter-spacing="-2"
+    letter-spacing="-3"
+  >
+    now mostly babysitting
+  </text>
+  <text
+    x="114"
+    y="436"
+    fill="#8b3d2a"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="74"
+    font-style="italic"
+    font-weight="700"
+    letter-spacing="-3"
   >
     agents.
   </text>
-  <rect x="80" y="520" width="440" height="2" fill="#48443d" />
-  <circle cx="92" cy="562" r="7" fill="#9ac9c1" />
   <text
-    x="116"
-    y="570"
-    fill="#9d978c"
+    x="118"
+    y="548"
+    fill="#69645c"
     font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
-    font-size="24"
-    letter-spacing="2"
+    font-size="20"
+    letter-spacing="1.5"
   >
-    DENSONGEORGE.COM
+    SENIOR SOFTWARE ENGINEER / MICROSOFT / DUBLIN
   </text>
 </svg>
