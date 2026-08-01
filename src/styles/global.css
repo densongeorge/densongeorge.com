@@ -196,16 +196,6 @@
     min-height: 6rem;
   }
 
-  .footer-meta {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-  }
-
-  .footer-meta > a {
-    color: var(--muted);
-  }
-
   .text-link {
     display: inline-flex;
     align-items: center;
@@ -255,8 +245,6 @@
   .hero-main h1,
   .section-copy h2,
   .profile-contact h2,
-  .colophon-header h1,
-  .colophon-copy h2,
   .not-found h1 {
     font-family: var(--font-serif);
     font-weight: 700;
@@ -305,8 +293,7 @@
   }
 
   .editorial-section,
-  .profile-contact,
-  .colophon-section {
+  .profile-contact {
     display: grid;
     grid-template-columns: minmax(8rem, 0.22fr) minmax(0, 1fr);
     gap: clamp(3rem, 8vw, 8rem);
@@ -394,105 +381,6 @@
     color: var(--accent);
   }
 
-  .eyebrow > span {
-    width: 1.4rem;
-    height: 1px;
-    background: currentColor;
-  }
-
-  .colophon-header {
-    max-width: 58rem;
-    padding-block: clamp(6rem, 13vw, 10rem);
-  }
-
-  .colophon-header h1 {
-    font-size: clamp(4rem, 10vw, 8rem);
-    line-height: 0.9;
-  }
-
-  .colophon-header > p:last-child {
-    max-width: 44rem;
-    margin-top: 2rem;
-    color: var(--muted);
-    font-size: clamp(1.05rem, 2vw, 1.2rem);
-  }
-
-  .colophon-section {
-    padding-block: clamp(4.5rem, 9vw, 7rem);
-    border-top: 1px solid var(--border);
-  }
-
-  .colophon-stack,
-  .reference-list {
-    margin: 0;
-  }
-
-  .colophon-stack > div {
-    display: grid;
-    grid-template-columns: minmax(8rem, 0.3fr) minmax(0, 1fr);
-    gap: 2rem;
-    padding-block: 1.5rem;
-    border-top: 1px solid var(--border);
-  }
-
-  .colophon-stack > div:last-child {
-    border-bottom: 1px solid var(--border);
-  }
-
-  .colophon-stack dt {
-    font-weight: 750;
-  }
-
-  .colophon-stack dd {
-    margin: 0;
-    color: var(--muted);
-  }
-
-  .colophon-copy h2 {
-    font-size: clamp(2.4rem, 5vw, 4.5rem);
-    line-height: 1;
-  }
-
-  .colophon-copy > p {
-    max-width: 47rem;
-    margin-top: 1.5rem;
-    color: var(--muted);
-    font-size: 1.05rem;
-  }
-
-  .colophon-copy a,
-  .reference-list a {
-    color: var(--accent);
-  }
-
-  .reference-list {
-    grid-column: 2;
-    margin-top: 1rem;
-    padding: 0;
-    list-style: none;
-  }
-
-  .reference-list li {
-    padding-block: 1.5rem;
-    border-top: 1px solid var(--border);
-  }
-
-  .reference-list li:last-child {
-    border-bottom: 1px solid var(--border);
-  }
-
-  .reference-list a {
-    font-family: var(--font-serif);
-    font-size: clamp(1.25rem, 2.5vw, 1.65rem);
-    font-weight: 700;
-  }
-
-  .reference-list p {
-    max-width: 48rem;
-    margin-top: 0.5rem;
-    color: var(--muted);
-  }
-
   .not-found {
     display: flex;
     min-height: min(44rem, 70svh);
@@ -538,14 +426,9 @@
     }
 
     .editorial-section,
-    .profile-contact,
-    .colophon-section {
+    .profile-contact {
       grid-template-columns: 1fr;
       gap: 2.5rem;
-    }
-
-    .reference-list {
-      grid-column: 1;
     }
   }
 
@@ -566,13 +449,7 @@
       margin-top: 0.15em;
     }
 
-    .colophon-stack > div {
-      grid-template-columns: 1fr;
-      gap: 0.35rem;
-    }
-
-    .footer-inner,
-    .footer-meta {
+    .footer-inner {
       align-items: flex-start;
       flex-direction: column;
     }
@@ -580,10 +457,6 @@
     .footer-inner {
       min-height: 7.5rem;
       justify-content: center;
-      gap: 0.45rem;
-    }
-
-    .footer-meta {
       gap: 0.45rem;
     }
   }
