@@ -1,4 +1,5 @@
 ---
+import StackExplorer from "../components/StackExplorer";
 import { SITE_DESCRIPTION } from "../consts";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
@@ -96,9 +97,8 @@ const linkedInUrl = "https://www.linkedin.com/in/denson-george-925852126/";
       </div>
       <div class="statement-copy">
         <h2 id="operating-mode">
-          Build software.<br />
-          <em>Manage agents.</em><br />
-          Check the output.
+          The job still starts with engineering.
+          <em>It just has more agents in the room.</em>
         </h2>
         <p>
           Senior Software Engineer at Microsoft, working in Dublin where
@@ -107,9 +107,32 @@ const linkedInUrl = "https://www.linkedin.com/in/denson-george-925852126/";
       </div>
     </section>
 
-    <section class="fact-section" aria-labelledby="quick-read">
+    <section class="stack-section" aria-labelledby="working-stack">
       <div class="section-label">
         <span>02</span>
+        <p>Working stack</p>
+      </div>
+      <div class="stack-intro">
+        <h2 id="working-stack">React. TypeScript. Fluent UI.</h2>
+        <p>
+          Not just listed here—the interactive panel below is built with all
+          three.
+        </p>
+      </div>
+
+      <div class="stack-island">
+        <StackExplorer client:only="react">
+          <div slot="fallback" class="stack-fallback">
+            <strong>React · TypeScript · Fluent UI</strong>
+            <span>Loading the interactive stack explorer…</span>
+          </div>
+        </StackExplorer>
+      </div>
+    </section>
+
+    <section class="fact-section" aria-labelledby="quick-read">
+      <div class="section-label">
+        <span>03</span>
         <p id="quick-read">The quick read</p>
       </div>
 
