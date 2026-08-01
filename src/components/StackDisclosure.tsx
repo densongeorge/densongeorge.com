@@ -13,7 +13,7 @@ import {
 } from "@fluentui/react-components";
 import { useEffect, useState } from "react";
 
-type StackId = "react" | "typescript" | "fluent";
+type StackId = "ui" | "backend" | "platform";
 
 type StackItem = {
   name: string;
@@ -22,23 +22,20 @@ type StackItem = {
 };
 
 const stack: Record<StackId, StackItem> = {
-  react: {
-    name: "React",
-    role: "Interaction",
-    detail:
-      "A focused client-side island handles the interactive detail on this otherwise static page.",
-  },
-  typescript: {
-    name: "TypeScript",
-    role: "Contracts",
-    detail:
-      "Strict types cover the Astro project and the state, events, and data inside this component.",
-  },
-  fluent: {
-    name: "Fluent UI",
+  ui: {
+    name: "UI",
     role: "Interface",
-    detail:
-      "The tabs you are using provide accessible keyboard behavior, semantic tokens, and theming.",
+    detail: "React, TypeScript, and Fluent UI.",
+  },
+  backend: {
+    name: "Backend",
+    role: "Services",
+    detail: "C# and .NET; Java and Spring Boot; Python.",
+  },
+  platform: {
+    name: "Platform",
+    role: "Infrastructure",
+    detail: "Kubernetes.",
   },
 };
 
@@ -133,7 +130,7 @@ function isStackId(value: SelectTabData["value"]): value is StackId {
 export default function StackDisclosure() {
   const styles = useStyles();
   const [isDark, setIsDark] = useState(prefersDarkMode);
-  const [selectedId, setSelectedId] = useState<StackId>("react");
+  const [selectedId, setSelectedId] = useState<StackId>("ui");
   const selected = stack[selectedId];
 
   useEffect(() => {
@@ -157,12 +154,12 @@ export default function StackDisclosure() {
       theme={isDark ? darkTheme : lightTheme}
     >
       <div className={styles.shell}>
-        <Text className={styles.label}>Implementation note</Text>
+        <Text className={styles.label}>Full-stack toolkit</Text>
         <TabList
           className={styles.tabs}
           selectedValue={selectedId}
           onTabSelect={handleTabSelect}
-          aria-label="Technology details"
+          aria-label="Full-stack technology areas"
         >
           {Object.entries(stack).map(([id, item]) => (
             <Tab key={id} id={`stack-tab-${id}`} value={id}>
