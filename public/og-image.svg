@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
   <title id="title">Denson George</title>
-  <desc id="desc">Software engineer, now mostly babysitting agents.</desc>
+  <desc id="desc">Senior full-stack software engineer working across software systems and AI agents.</desc>
   <rect width="1200" height="630" fill="#f7f5ef" />
   <rect x="78" y="72" width="5" height="486" fill="#8b3d2a" />
   <text
@@ -23,7 +23,7 @@
     font-weight="700"
     letter-spacing="-3"
   >
-    Software engineer,
+    Senior software engineer.
   </text>
   <text
     x="114"
@@ -35,7 +35,7 @@
     font-weight="700"
     letter-spacing="-3"
   >
-    now mostly babysitting
+    Full-stack software,
   </text>
   <text
     x="114"
@@ -47,7 +47,7 @@
     font-weight="700"
     letter-spacing="-3"
   >
-    agents.
+    AI agents.
   </text>
   <text
     x="118"
@@ -57,6 +57,6 @@
     font-size="20"
     letter-spacing="1.5"
   >
-    FULL-STACK SOFTWARE ENGINEER / AI AGENTS
+    DENSONGEORGE.COM
   </text>
 </svg>

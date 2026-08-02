@@ -36,3 +36,13 @@ Connect this repository to a Cloudflare Pages project and use:
 - **Root directory:** repository root
 
 No environment variables or Astro adapter are required. The `.nvmrc` file pins the build to Node.js 24. After the first deployment, add `densongeorge.com` as the custom domain in Cloudflare Pages and complete any DNS prompts Cloudflare provides.
+
+## Ship checklist
+
+1. Open a pull request from `densongeorge-build-personal-site`.
+2. Merge the pull request into `main`.
+3. Connect Cloudflare Pages to `densongeorge/densongeorge.com`.
+4. Set the build command to `npm run build`.
+5. Set the output directory to `dist`.
+6. Add `densongeorge.com` and `www.densongeorge.com` as custom domains.
+7. Verify HTTPS, redirect `www` to the canonical domain, and confirm static assets are cached.

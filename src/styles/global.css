@@ -13,7 +13,8 @@
   h2,
   h3,
   p,
-  ul {
+  ul,
+  dl {
     margin: 0;
   }
 
@@ -162,6 +163,9 @@
   }
 
   .navigation {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
     list-style: none;
   }
 
@@ -231,7 +235,6 @@
   }
 
   .hero-role,
-  .aside-label,
   .section-label,
   .eyebrow {
     color: var(--muted);
@@ -244,7 +247,6 @@
 
   .hero-main h1,
   .section-copy h2,
-  .profile-contact h2,
   .not-found h1 {
     font-family: var(--font-serif);
     font-weight: 700;
@@ -268,38 +270,34 @@
     text-wrap: balance;
   }
 
-  .hero-headline em {
-    display: block;
-    color: var(--accent);
-    font-family: var(--font-serif);
-    font-weight: 700;
-  }
-
-  .hero-aside {
+  .hero-intro {
+    display: grid;
+    gap: 1rem;
     padding-left: clamp(1.5rem, 3vw, 2.5rem);
     border-left: 1px solid var(--border);
   }
 
-  .hero-aside > p:not(.aside-label, .aside-location) {
-    margin-top: 1rem;
-    color: var(--text);
-    line-height: 1.55;
-  }
-
-  .aside-location {
-    margin-top: 1.25rem;
+  .hero-intro > p {
     color: var(--muted);
-    font-size: 0.88rem;
+    font-size: clamp(1rem, 1.8vw, 1.12rem);
+    line-height: 1.65;
   }
 
-  .editorial-section,
-  .profile-contact {
-    display: grid;
-    grid-template-columns: minmax(8rem, 0.22fr) minmax(0, 1fr);
-    gap: clamp(3rem, 8vw, 8rem);
+  .social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .social-links .text-link {
+    margin-top: 0;
   }
 
   .editorial-section {
+    display: grid;
+    grid-template-columns: minmax(8rem, 0.22fr) minmax(0, 1fr);
+    gap: clamp(3rem, 8vw, 8rem);
     padding-block: clamp(5rem, 11vw, 8rem);
     border-bottom: 1px solid var(--border);
   }
@@ -332,6 +330,44 @@
     font-size: clamp(1.05rem, 2vw, 1.22rem);
   }
 
+  .work-list,
+  .roadmap-list {
+    padding: 0;
+    list-style: none;
+  }
+
+  .work-list {
+    margin-top: clamp(2.5rem, 5vw, 4rem);
+    border-top: 1px solid var(--border);
+  }
+
+  .work-list > li {
+    display: grid;
+    grid-template-columns: 2.5rem minmax(0, 1fr);
+    gap: 1.25rem;
+    padding-block: 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .work-list > li > span,
+  .roadmap-list > li > span {
+    color: var(--accent);
+    font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+    font-size: 0.7rem;
+    font-weight: 750;
+  }
+
+  .work-list h3 {
+    font-size: 1rem;
+    letter-spacing: -0.01em;
+  }
+
+  .work-list p {
+    max-width: 38rem;
+    margin-top: 0.35rem;
+    color: var(--muted);
+  }
+
   .stack-copy h2 {
     max-width: 15ch;
   }
@@ -358,19 +394,87 @@
     font-size: 0.95rem;
   }
 
-  .profile-contact {
-    padding-block: clamp(5rem, 11vw, 8rem);
+  .role-card {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: clamp(2.5rem, 5vw, 4rem);
+    border: 1px solid var(--border);
   }
 
-  .contact-content h2 {
-    font-size: clamp(2.8rem, 6vw, 5rem);
-    line-height: 1;
+  .role-card > div {
+    min-height: 9.5rem;
+    padding: clamp(1.35rem, 3vw, 2rem);
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
   }
 
-  .contact-content > p {
-    margin-top: 1.5rem;
+  .role-card > div:nth-child(2n) {
+    border-right: 0;
+  }
+
+  .role-card > div:nth-last-child(-n + 2) {
+    border-bottom: 0;
+  }
+
+  .role-card dt,
+  .roadmap-label {
     color: var(--muted);
-    font-size: 1.05rem;
+    font-size: 0.68rem;
+    font-weight: 750;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .role-card dd {
+    margin: 1.25rem 0 0;
+    font-family: var(--font-serif);
+    font-size: clamp(1.45rem, 3vw, 2.15rem);
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    line-height: 1.05;
+    text-wrap: balance;
+  }
+
+  .role-card-primary {
+    background: var(--surface);
+  }
+
+  .roadmap-card {
+    margin-top: clamp(2.5rem, 5vw, 4rem);
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    border: 1px solid var(--border);
+    background: var(--surface);
+  }
+
+  .roadmap-list {
+    margin-top: 1.25rem;
+  }
+
+  .roadmap-note {
+    max-width: 42rem;
+    margin-top: 0.75rem;
+    color: var(--muted);
+  }
+
+  .roadmap-list > li {
+    display: grid;
+    grid-template-columns: 2.5rem minmax(0, 1fr);
+    gap: 1rem;
+    padding-block: 1rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .roadmap-list p {
+    max-width: 40rem;
+    color: var(--text);
+  }
+
+  .contact-section {
+    border-bottom: 0;
+  }
+
+  .contact-links {
+    margin-top: 2rem;
   }
 
   .eyebrow {
@@ -417,7 +521,7 @@
       max-width: 56rem;
     }
 
-    .hero-aside {
+    .hero-intro {
       max-width: 34rem;
       padding-top: 2rem;
       padding-left: 0;
@@ -425,8 +529,7 @@
       border-left: 0;
     }
 
-    .editorial-section,
-    .profile-contact {
+    .editorial-section {
       grid-template-columns: 1fr;
       gap: 2.5rem;
     }
@@ -445,16 +548,32 @@
       font-size: clamp(4rem, 20vw, 6rem);
     }
 
-    .hero-headline em {
-      margin-top: 0.15em;
+    .navigation {
+      gap: 0.8rem;
+    }
+
+    .navigation a {
+      font-size: 0.7rem;
+    }
+
+    .role-card {
+      grid-template-columns: 1fr;
+    }
+
+    .role-card > div,
+    .role-card > div:nth-child(2n),
+    .role-card > div:nth-last-child(-n + 2) {
+      border-right: 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .role-card > div:last-child {
+      border-bottom: 0;
     }
 
     .footer-inner {
       align-items: flex-start;
       flex-direction: column;
-    }
-
-    .footer-inner {
       min-height: 7.5rem;
       justify-content: center;
       gap: 0.45rem;

@@ -13,6 +13,8 @@ const { title, description = SITE_DESCRIPTION, noIndex = false } = Astro.props;
 const site = Astro.site ?? new URL(SITE_URL);
 const canonicalUrl = new URL(Astro.url.pathname, site);
 const socialImageUrl = new URL("/og-image.png", site);
+const socialImageAlt =
+  "Denson George — Senior full-stack software engineer working across software systems and AI agents.";
 ---
 
 <!doctype html>
@@ -25,12 +27,12 @@ const socialImageUrl = new URL("/og-image.png", site);
     <meta name="color-scheme" content="light dark" />
     <meta
       name="theme-color"
-      content="#f5f1e7"
+      content="#f7f5ef"
       media="(prefers-color-scheme: light)"
     />
     <meta
       name="theme-color"
-      content="#151412"
+      content="#121210"
       media="(prefers-color-scheme: dark)"
     />
     {noIndex && <meta name="robots" content="noindex, nofollow" />}
@@ -47,15 +49,13 @@ const socialImageUrl = new URL("/og-image.png", site);
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta
-      property="og:image:alt"
-      content="Denson George — Software engineer, now mostly babysitting agents."
-    />
+    <meta property="og:image:alt" content={socialImageAlt} />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={socialImageUrl} />
+    <meta name="twitter:image:alt" content={socialImageAlt} />
 
     <title>{title}</title>
   </head>
@@ -76,6 +76,12 @@ const socialImageUrl = new URL("/og-image.png", site);
                   rel="me"
                 >
                   LinkedIn
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/densongeorge" rel="me">
+                  GitHub
                   <span aria-hidden="true">↗</span>
                 </a>
               </li>
