@@ -57,7 +57,7 @@ const contentSecurityPolicy = [
   "img-src 'self' data:",
   "object-src 'none'",
   `script-src ${scriptSources}`,
-  "style-src 'self' 'unsafe-inline'",
+  "style-src 'self'",
   "font-src 'self'",
 ].join("; ");
 

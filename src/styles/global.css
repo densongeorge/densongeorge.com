@@ -221,6 +221,10 @@
     color: var(--accent-hover);
   }
 
+  .text-link-secondary {
+    color: var(--muted);
+  }
+
   .text-link:hover > span {
     transform: translate(0.12rem, -0.12rem);
   }
@@ -368,30 +372,34 @@
     color: var(--muted);
   }
 
-  .stack-copy h2 {
-    max-width: 15ch;
+  .focus-list {
+    margin-top: clamp(2.5rem, 5vw, 4rem);
+    border-top: 1px solid var(--border);
   }
 
-  .stack-island {
-    max-width: 48rem;
-    min-height: 10rem;
-    margin-top: clamp(3rem, 6vw, 4.5rem);
+  .focus-list > div {
+    display: grid;
+    grid-template-columns: minmax(7rem, 0.25fr) minmax(0, 1fr);
+    gap: 1.5rem;
+    padding-block: 1.4rem;
+    border-bottom: 1px solid var(--border);
   }
 
-  .stack-fallback {
-    display: flex;
-    min-height: 10rem;
-    flex-direction: column;
-    justify-content: center;
-    gap: 0.35rem;
-    padding-block: 1.25rem;
-    border-block: 1px solid var(--border);
-    color: var(--muted);
+  .focus-list dt {
+    color: var(--accent);
+    font-size: 0.7rem;
+    font-weight: 750;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
   }
 
-  .stack-fallback strong {
-    color: var(--text);
-    font-size: 0.95rem;
+  .focus-list dd {
+    margin: 0;
+    font-family: var(--font-serif);
+    font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.25;
   }
 
   .role-card {
@@ -569,6 +577,11 @@
 
     .role-card > div:last-child {
       border-bottom: 0;
+    }
+
+    .focus-list > div {
+      grid-template-columns: 1fr;
+      gap: 0.35rem;
     }
 
     .footer-inner {

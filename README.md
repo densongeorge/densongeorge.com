@@ -4,9 +4,9 @@ The personal portfolio for [densongeorge.com](https://densongeorge.com), built a
 
 ## Stack
 
-- Astro for the static shell, metadata, routing, and sitemap
-- React and TypeScript for the compact interactive stack disclosure
-- Fluent UI 9 for its tabs, design tokens, and accessibility behavior
+- Astro and strict TypeScript for the static site, metadata, and routing
+- CSS for the responsive visual system and light/dark themes
+- Astro’s sitemap integration for search-engine discovery
 
 ## Local development
 
